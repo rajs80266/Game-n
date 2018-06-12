@@ -3,21 +3,25 @@
 
 int main()
 {
-    int start,n,temp,user,comp;
+    int start,n,temp,user,comp,gap;
 
     printf("Start by you(1)\n");
     printf("Start by computer(2)\n");
     scanf("%d",&start);
-    system ("cls");
+    system("cls");
 
     printf("Enter number n:");
     scanf("%d",&n);
+    printf("Enter maximum number that can be increased:");
+    scanf("%d",&gap);
+    gap++;
+    system("cls");
 
     temp=n;
     temp--;
     while(temp>0)
-        temp=temp-4;
-    temp=temp+4;
+        temp=temp-gap;
+    temp=temp+gap;
 
     if(start==2)
     {
@@ -35,7 +39,7 @@ int main()
         while(1)
         {
             scanf("%d",&user);
-            if(user<=n && user<comp+4 && user>comp)
+            if(user<=n && user<comp+gap && user>comp)
             {
                 if(user==n)
                 {
@@ -44,14 +48,14 @@ int main()
                 }
 
                 while(temp<user)
-                    temp=temp+4;
+                    temp=temp+gap;
 
                 comp=temp;
                 if(temp==user)
                     comp++;
 
                 system ("cls");
-                printf("%d\n",temp,comp);
+                printf("%d\n",comp);
                 if(comp==n)
                 {
                     printf("Congratulations....\nYou Won.");
